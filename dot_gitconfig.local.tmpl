@@ -1,0 +1,26 @@
+{{- if eq .chezmoi.os "linux" -}}
+[core]
+	pager = delta
+[interative]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+
+{{- else if eq .chezmoi.os "macos" -}}
+[credential]
+	helper = osxkeychain
+[difftol "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[mergetool "Kaleidoscope"]
+	trustExitCode = true
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+[mergetool]
+	prompt = false
+	keepBackup = true
+[diff]
+	tool = Kaleidoscope
+[merge]
+	tool = Kaleidoscope
+
+{{- end -}}
+

@@ -1,0 +1,59 @@
+[user]
+	name = Geoff Garside
+	email = geoff@geoffgarside.co.uk
+[core]
+	autocrlf = false
+	editor = vim
+	excludesfile = ~/.gitignore
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	brm = branch --merged
+	brnm = branch --no-merged
+	st = status
+	di = diff
+	dt = difftool --dir-diff
+	ri = rebase --interactive
+	rc = rebase --continue
+	rb = rebase
+	pf = push --force
+	pp = pull --prune
+	cp = cherry-pick
+[push]
+	default = simple
+	rebase = true
+[color]
+	ui = true
+[color "branch"]
+	local = yellow
+	remote = green
+	current = yellow reverse
+[color "diff"]
+	old = red bold
+	new = green bold
+	frag = magenta bold
+	meta = yellow bold
+[diff]
+	colorMoved = default
+[difftool]
+	prompt = false
+[merge]
+	stat = true
+	conflictstyle = diff3
+[branch]
+	autosetupmerge = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[url "git@github.com:geoffgarside"]
+	insteadOf = https://github.com/geoffgarside
+[include]
+	path = ~/.gitconfig.local
+
