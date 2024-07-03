@@ -31,6 +31,8 @@ if command -v git > /dev/null; then
   alias g='git'
 fi
 
+[ "$TERM" = "xterm-kitty" ] && alias ssh="env TERM=xterm-256color ssh"
+
 # Load starship theme
 # line 1: `starship` binary as command, from github release
 # line 2: starship setup at clone(create init.zsh, completion)
