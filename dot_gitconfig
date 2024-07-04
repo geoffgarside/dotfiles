@@ -52,8 +52,8 @@
 	rebase = false
 [init]
 	defaultBranch = main
-[url "git@github.com:geoffgarside"]
-	insteadOf = https://github.com/geoffgarside
+[url "git@github.com:geoffgarside/geffy.co.uk-"]
+	insteadOf = https://github.com/geoffgarside/geffy.co.uk-
 [include]
 	path = ~/.gitconfig.local
 
