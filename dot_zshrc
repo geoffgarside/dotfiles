@@ -38,6 +38,10 @@ if command -v git > /dev/null; then
   alias g='git'
 fi
 
+if command -v lazygit >/dev/null; then
+  alias lg='lazygit'
+fi
+
 [ "$TERM" = "xterm-kitty" ] && alias ssh="env TERM=xterm-256color ssh"
 
 # Load starship theme
