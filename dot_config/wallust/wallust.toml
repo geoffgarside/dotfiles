@@ -86,6 +86,7 @@ saturation = 35
 
 hyprland = { template = 'templates/colors-hyprland.conf', target = '~/.config/hypr/conf/colors.conf', new_engine = true }
 kitty =    { template = 'templates/colors-kitty.conf', target = '~/.config/kitty/colors.conf', new_engine = true }
+waybar =   { template = 'templates/colors-waybar.css', target = '~/.cache/wallust/colors-waybar.css', new_engine = true }
 
 # template field can be express as `src` and target as `dst` for shorter naming:
 #alacritty = { src = 'alacrittycfg', dst = '~/.config/alacritty/alacritty.toml' }
