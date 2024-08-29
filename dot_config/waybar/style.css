@@ -1,3 +1,5 @@
+@import 'themes/catppuccin-mocha.css';
+
 * {
   border: none;
   border-radius: 0;
@@ -7,7 +9,7 @@
 }
 
 window#waybar {
-  background-color: #181825;
+  background-color: @mantle;
   transition-property: background-color;
   transition-duration: 0.5s;
 }
@@ -30,28 +32,29 @@ window#waybar.hidden {
   padding: 6px 18px;
   margin: 6px 3px;
   border-radius: 4px;
-  background-color: #1e1e2e;
-  color: #cdd6f4;
+  background-color: @base;
+  color: @text;
 }
 
 #workspaces button.active {
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: @base;
+  background-color: @text;
 }
 
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
-  color: #1e1e2e;
-  background-color: #cdd6f4;
+  color: @base;
+  background-color: @text;
 }
 
 #workspaces button.urgent {
-  background-color: #f38ba8;
+  background-color: @red;
 }
 
 #memory,
 #custom-power,
+#custom-updates,
 #battery,
 #backlight,
 #pulseaudio,
@@ -61,8 +64,12 @@ window#waybar.hidden {
   border-radius: 4px;
   margin: 6px 3px;
   padding: 6px 12px;
-  background-color: #1e1e2e;
-  color: #181825;
+  background-color: @base;
+  color: @mantle;
+}
+
+#custom-updates {
+  background-color: @lavender;
 }
 
 #custom-power {
@@ -79,11 +86,11 @@ window#waybar.hidden {
 }
 
 #memory {
-  background-color: #fab387;
+  background-color: @peach;
 }
 
 #battery {
-  background-color: #f38ba8;
+  background-color: @red;
 }
 
 #battery.warning,
@@ -94,30 +101,30 @@ window#waybar.hidden {
 }
 
 #battery.charging {
-  background-color: #a6e3a1;
-  color: #181825;
+  background-color: @green;
+  color: @mantle;
 }
 
 #backlight {
-  background-color: #fab387;
+  background-color: @peach;
 }
 
 #pulseaudio {
-  background-color: #f9e2af;
+  background-color: @yellow;
 }
 
 #network {
-  background-color: #94e2d5;
+  background-color: @teal;
   padding-right: 17px;
 }
 
 #clock {
   font-family: JetBrainsMono Nerd Font;
-  background-color: #cba6f7;
+  background-color: @mauve;
 }
 
 #custom-power {
-  background-color: #f2cdcd;
+  background-color: @flamingo;
 }
 
 
