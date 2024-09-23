@@ -7,6 +7,6 @@ if [ -n "${PIDS}" ]; then
 	sleep 0.2
 fi
 
-waybar -c "${DIR}/config.jsonc" \
-	-s "${DIR}/style.css" \
-	-l error &
+systemd-cat -t waybar \
+	waybar -c "${DIR}/config.jsonc" \
+		-s "${DIR}/style.css" &
