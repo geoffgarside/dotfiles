@@ -10,6 +10,8 @@ export EDITOR=nvim
 # Restore Ctrl+A/Ctrl+E Home/End emacs key bindings
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
