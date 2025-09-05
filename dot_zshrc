@@ -13,11 +13,6 @@ bindkey "^E" vi-end-of-line
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-source "${ZINIT_HOME}/zinit.zsh"
-
 [ -f "${HOME}/.config/op/plugins.sh" ] && source "${HOME}/.config/op/plugins.sh"
 
 if command -v eza > /dev/null; then
@@ -43,17 +38,5 @@ if command -v git > /dev/null; then
   alias g='git'
 fi
 
-if command -v lazygit >/dev/null; then
-  alias lg='lazygit'
-fi
-
 [ "$TERM" = "xterm-kitty" ] && alias ssh="env TERM=xterm-256color ssh"
 
-# Load starship theme
-# line 1: `starship` binary as command, from github release
-# line 2: starship setup at clone(create init.zsh, completion)
-# line 3: pull behavior same as clone, source init.zsh
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
